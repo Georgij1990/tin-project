@@ -4,9 +4,8 @@ import './App.css';
 import './styles/drop-down-menu.css';
 import Students from './components/students';
 import Courses from './components/courses';
-import StudentsWithCourses from './components/studentsWithCourses';
-import CoursesWithStudents from './components/coursesWithStudents';
 import StudentAndCourses from './components/studentCourses';
+import Student from './components/student';
 import CreateStudent from './components/createStudent';
 import UpdateStudent from './components/updateStudent';
 import DeleteStudent from './components/deleteStudent';
@@ -35,12 +34,6 @@ function App() {
               <li className="nav-item">
                 <Link to="/studentAndCourses" className="nav-link">Student and Courses</Link>
               </li>
-              <li className="nav-item">
-                <Link to="/studentsWithCourses" className="nav-link">Students with Courses</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/coursesWithStudents" className="nav-link">Courses with Students</Link>
-              </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Manage
@@ -57,6 +50,7 @@ function App() {
       </nav>
       <Routes>
         <Route path="/students" element={<Students />} />
+        <Route path="/student" element={<Student />} />
         <Route path="/update-student/:id" element={<UpdateStudent />} />
         <Route path="/delete-student/:id" element={<DeleteStudent />} />
 
@@ -67,9 +61,6 @@ function App() {
         <Route path="/studentAndCourses" element={<StudentAndCourses />} />
         <Route path="/update-student-course/:id" element={<UpdateStudentCourse />} />
         <Route path="/delete-student-course/:id" element={<DeleteStudentCourse />} />
-
-        <Route path="/studentsWithCourses" element={<StudentsWithCourses />} />
-        <Route path="/coursesWithStudents" element={<CoursesWithStudents />} />
 
         <Route path="/create-student" element={<CreateStudent />} />
         <Route path="/create-course" element={<CreateCourse />} />
