@@ -10,6 +10,8 @@ public class LocalDateConverter implements AttributeConverter<LocalDate, String>
 
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
+
+
     @Override
     public String convertToDatabaseColumn(LocalDate attribute) {
         return (attribute == null ? null : attribute.format(formatter));

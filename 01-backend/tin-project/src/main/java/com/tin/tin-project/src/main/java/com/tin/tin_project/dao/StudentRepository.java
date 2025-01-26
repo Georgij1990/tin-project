@@ -22,7 +22,7 @@ public class StudentRepository implements IStudentRepository {
 
     @Override
     public List<Student> getStudents() {
-        String str = "SELECT s FROM Student s LEFT JOIN FETCH s.studentCourses";
+        String str = "SELECT s FROM Student s LEFT JOIN FETCH s.studentCourses sc LEFT JOIN FETCH sc.course";
 
         TypedQuery<Student> query = em.createQuery(str, Student.class);
 
